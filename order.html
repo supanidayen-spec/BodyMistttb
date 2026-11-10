@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สั่งซื้อ | Body Scent</title>
+  <meta name="description" content="สั่งซื้อน้ำหอมฉีดตัวและโรลออน Body Scent กรอกข้อมูลเพื่อยืนยันคำสั่งซื้อ">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- สไตล์เฉพาะหน้าสั่งซื้อ (ย้ายไปรวมใน style.css ได้ภายหลัง) -->
+  <style>
+    .page-title {
+      font-size: var(--text-xl);
+    }
+
+    .order-card {
+      padding: var(--space-5) var(--space-4);
+      background: var(--color-white);
+      border: var(--hairline-soft);
+      border-radius: var(--radius);
+    }
+
+    .field__hint {
+      margin: 0.4rem 0 0;
+      font-size: var(--text-sm);
+      color: var(--color-ink-soft);
+    }
+
+    .order-card .btn {
+      margin-top: var(--space-3);
+    }
+
+    .order-back {
+      margin-top: var(--space-4);
+      text-align: center;
+    }
+
+    .order-back p {
+      max-width: none;
+      margin: 0;
+    }
+
+    .site-footer__copy {
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .order-card {
+        padding: var(--space-4) var(--space-3);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">BODY SCENT</a>
+      <nav class="nav" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html">สินค้า</a>
+        <a href="order.html" aria-current="page">สั่งซื้อ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container container--narrow">
+
+        <div class="section__header">
+          <h1 class="page-title">สั่งซื้อสินค้า</h1>
+          <p class="lead">กรอกข้อมูลด้านล่างเพื่อยืนยันคำสั่งซื้อ เราจะติดต่อกลับตามช่องทางที่คุณให้ไว้</p>
+        </div>
+
+        <div class="order-card">
+          <form id="orderForm">
+
+            <div class="field">
+              <label for="customerName">ชื่อลูกค้า</label>
+              <input class="input" type="text" id="customerName" name="customerName"
+                     autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="contact">เบอร์โทร / Line</label>
+              <input class="input" type="text" id="contact" name="contact"
+                     autocomplete="off" required>
+            </div>
+
+            <div class="field">
+              <label for="items">รายการสินค้า</label>
+              <textarea class="textarea" id="items" name="items" rows="3" required
+                        style="min-height: 90px;"></textarea>
+              <p class="field__hint">หากต้องการสั่งหลายรายการ สามารถพิมพ์เพิ่มและแก้ไขได้</p>
+            </div>
+
+            <div class="field">
+              <label for="total">จำนวนเงินรวม (บาท)</label>
+              <input class="input" type="number" id="total" name="total"
+                     min="0" step="any" inputmode="decimal" required>
+              <p class="field__hint">หากแก้ไขรายการสินค้า กรุณาปรับจำนวนเงินรวมให้ตรงกัน</p>
+            </div>
+
+            <div class="field">
+              <label for="note">หมายเหตุ (ไม่บังคับ)</label>
+              <textarea class="textarea" id="note" name="note" rows="3"
+                        style="min-height: 90px;"></textarea>
+            </div>
+
+            <button class="btn btn--solid btn--block" type="submit">ยืนยันสั่งซื้อ</button>
+
+          </form>
+        </div>
+
+        <div class="order-back">
+          <p><a class="link-line" href="product.html">เลือกดูสินค้าเพิ่มเติม</a></p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="index.html">BODY SCENT</a>
+          <p class="mt-3">Every Mood, Every Scent, Every You.<br>
+            น้ำหอมที่สะท้อนอารมณ์และตัวตนของคุณ</p>
+        </div>
+        <div>
+          <h4>เมนู</h4>
+          <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="product.html">สินค้าทั้งหมด</a></li>
+            <li><a href="order.html">สั่งซื้อ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>เลือกตามอารมณ์</h4>
+          <ul>
+            <li><a href="product.html?mood=fresh">Fresh</a></li>
+            <li><a href="product.html?mood=sweet">Sweet</a></li>
+            <li><a href="product.html?mood=confident">Confident</a></li>
+            <li><a href="product.html?mood=romance">Romance</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__copy">&copy; 2026 Body Scent. สงวนลิขสิทธิ์</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

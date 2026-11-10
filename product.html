@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สินค้าทั้งหมด | Body Scent</title>
+  <meta name="description" content="น้ำหอมฉีดตัว Body Scent ขนาด 30ml และ 100ml และโรลออน เลือกกลิ่นตามอารมณ์ Fresh, Sweet, Confident, Romance">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- สไตล์เฉพาะหน้าสินค้า (ย้ายไปรวมใน style.css ได้ภายหลัง) -->
+  <style>
+    .page-title {
+      font-size: var(--text-xl);
+    }
+
+    /* ข้อความสถานะที่ script.js ใส่ใน #product-list (กำลังโหลด / ไม่พบสินค้า) */
+    #product-list > p {
+      grid-column: 1 / -1;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .site-footer__copy {
+      max-width: none;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">BODY SCENT</a>
+      <nav class="nav" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html" aria-current="page">สินค้า</a>
+        <a href="order.html">สั่งซื้อ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <div class="section__header">
+          <h1 class="page-title">สินค้าทั้งหมด</h1>
+          <p class="lead">น้ำหอมฉีดตัวขนาด 30ml และ 100ml รวมถึงโรลออน เลือกกลิ่นที่ตรงกับอารมณ์ของคุณ</p>
+        </div>
+
+        <!-- ปุ่มกรอง: script.js สร้างให้ -->
+        <div id="filter-bar" role="group" aria-label="กรองสินค้าตามอารมณ์"></div>
+
+        <!-- การ์ดสินค้า: script.js สร้างให้ -->
+        <div id="product-list" class="grid grid--4" aria-live="polite"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="index.html">BODY SCENT</a>
+          <p class="mt-3">Every Mood, Every Scent, Every You.<br>
+            น้ำหอมที่สะท้อนอารมณ์และตัวตนของคุณ</p>
+        </div>
+        <div>
+          <h4>เมนู</h4>
+          <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="product.html">สินค้าทั้งหมด</a></li>
+            <li><a href="order.html">สั่งซื้อ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>เลือกตามอารมณ์</h4>
+          <ul>
+            <li><a href="product.html?mood=fresh">Fresh</a></li>
+            <li><a href="product.html?mood=sweet">Sweet</a></li>
+            <li><a href="product.html?mood=confident">Confident</a></li>
+            <li><a href="product.html?mood=romance">Romance</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="site-footer__copy">&copy; 2026 Body Scent. สงวนลิขสิทธิ์</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
